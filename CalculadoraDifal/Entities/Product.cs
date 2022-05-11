@@ -1,12 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CalculadoraDifal.Entities.Enums;
 
 namespace CalculadoraDifal.Entities
 {
-    internal class Product
+    class Product
     {
+        public double ProductValue { get; set; }
+        public int InternalRate { get; set; } // Alíquota Interna Produto
+        public Origin Origin { get; set; }
+
+        public Product()
+        {
+        }
+
+        public Product(double productValue, int internalRate, Origin origin)
+        {
+            ProductValue = productValue;
+            InternalRate = internalRate;
+            Origin = origin;
+        }
     }
 }
