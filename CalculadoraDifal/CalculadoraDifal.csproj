@@ -121,6 +121,7 @@
     </Compile>
     <Compile Include="Entities\Enums\Origin.cs" />
     <Compile Include="Entities\InitialParams.cs" />
+    <Compile Include="Entities\InsideTax.cs" />
     <Compile Include="Entities\Product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="MainPage.xaml.cs">

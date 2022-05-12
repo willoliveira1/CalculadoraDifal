@@ -6,4 +6,3 @@
         International = 1
     }
 }
-

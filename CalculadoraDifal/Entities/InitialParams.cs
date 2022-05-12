@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CalculadoraDifal.src.Entities
+namespace CalculadoraDifal.Entities
 {
     class InitialParams
     {
@@ -41,3 +41,4 @@ namespace CalculadoraDifal.src.Entities
         }
     }
 }
+

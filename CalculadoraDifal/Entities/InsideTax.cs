@@ -1,4 +1,4 @@
-namespace CalculadoraDifal.src.Entities
+namespace CalculadoraDifal.Entities
 {
     internal class InsideTax : InitialParams
     {
@@ -15,4 +15,3 @@ namespace CalculadoraDifal.src.Entities
 
     }
 }
-
