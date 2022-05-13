@@ -39,10 +39,5 @@
         {
             return Product.ProductValue + Difal();
         }
-
-
-
-
-
     }
 }

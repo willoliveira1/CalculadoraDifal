@@ -43,10 +43,5 @@ namespace CalculadoraDifal.Entities
         {
             return Product.ProductValue + Difal();
         }
-
-
-
-
-
     }
 }
