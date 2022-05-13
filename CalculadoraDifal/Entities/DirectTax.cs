@@ -1,6 +1,6 @@
-namespace CalculadoraDifal.Entities
+﻿namespace CalculadoraDifal.Entities
 {
-    internal class InsideTax : InitialParams
+    internal class DirectTax : InitialParams
     {
         double difal, totalValue, calculationBasis, productIcms;
 
@@ -8,18 +8,18 @@ namespace CalculadoraDifal.Entities
         public Product Product { get; set; }
         public Contributor Contributor { get; set; }
 
-        public InsideTax()
+        public DirectTax()
         {
         }
-         
-        public InsideTax(Product product, Contributor contributor) : base(product, contributor)
+
+        public DirectTax(Product product, Contributor contributor) : base(product, contributor)
         {
             Product = product;
             Contributor = contributor;
             IcmsTax = IcmsTax();
         }
 
-        public void Calculate() 
+        public void Calculate()
         {
             productIcms = Product.ProductValue * IcmsTax;
             calculationBasis = (Product.ProductValue - productIcms) / (1 - Product.InternalRate);
@@ -27,17 +27,13 @@ namespace CalculadoraDifal.Entities
             totalValue = Product.ProductValue + difal;
         }
 
-        public double ProductIcms()
+        public double DifalRate()
         {
-            return Product.ProductValue * IcmsTax;
-        }
-        public double CalculationBasis()
-        {
-            return (Product.ProductValue - ProductIcms()) / (1 - Product.InternalRate);
+            return Product.InternalRate - IcmsTax;
         }
         public double Difal()
         {
-            return CalculationBasis() - Product.ProductValue;
+            return Product.ProductValue * DifalRate();
         }
         public double TotalValue()
         {

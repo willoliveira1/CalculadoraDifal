@@ -119,11 +119,15 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Entities\Contributor.cs" />
+    <Compile Include="Entities\DirectTax.cs" />
+    <Compile Include="Entities\Enums\ContributorType.cs" />
     <Compile Include="Entities\Enums\Origin.cs" />
     <Compile Include="Entities\InitialParams.cs" />
     <Compile Include="Entities\InsideTax.cs" />
+    <Compile Include="Entities\NonContributorTax.cs" />
     <Compile Include="Entities\Product.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Program2.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>

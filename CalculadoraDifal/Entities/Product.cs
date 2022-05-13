@@ -15,7 +15,7 @@ namespace CalculadoraDifal.Entities
         public Product(double productValue, int internalRate, Origin origin)
         {
             ProductValue = productValue;
-            InternalRate = internalRate;
+            InternalRate = internalRate / 100;
             Origin = origin;
         }
     }

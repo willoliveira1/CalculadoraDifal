@@ -51,5 +51,10 @@ namespace CalculadoraDifal
         {
 
         }
+
+        private void estado_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

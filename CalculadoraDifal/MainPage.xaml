@@ -45,7 +45,34 @@
 
         </Grid>
 
-        <ComboBox x:Name="estado" Grid.ColumnSpan="2" Margin="135,210,0,0" Grid.RowSpan="2" Width="258" Height="32"/>
+        <ComboBox x:Name="estado" Grid.ColumnSpan="2" Margin="135,210,0,0" Grid.RowSpan="2" Width="258" Height="32" SelectionChanged="estado_SelectionChanged">
+            <ComboBoxItem>AC</ComboBoxItem>
+            <ComboBoxItem>AL</ComboBoxItem>
+            <ComboBoxItem>AM</ComboBoxItem>
+            <ComboBoxItem>AP</ComboBoxItem>
+            <ComboBoxItem>BA</ComboBoxItem>
+            <ComboBoxItem>CE</ComboBoxItem>
+            <ComboBoxItem>DF</ComboBoxItem>
+            <ComboBoxItem>ES</ComboBoxItem>
+            <ComboBoxItem>GO</ComboBoxItem>
+            <ComboBoxItem>MA</ComboBoxItem>
+            <ComboBoxItem>MG</ComboBoxItem>
+            <ComboBoxItem>MS</ComboBoxItem>
+            <ComboBoxItem>MT</ComboBoxItem>
+            <ComboBoxItem>PA</ComboBoxItem>
+            <ComboBoxItem>PB</ComboBoxItem>
+            <ComboBoxItem>PE</ComboBoxItem>
+            <ComboBoxItem>PI</ComboBoxItem>
+            <ComboBoxItem>PR</ComboBoxItem>
+            <ComboBoxItem>RJ</ComboBoxItem>
+            <ComboBoxItem>RN</ComboBoxItem>
+            <ComboBoxItem>RO</ComboBoxItem>
+            <ComboBoxItem>RR</ComboBoxItem>
+            <ComboBoxItem>RS</ComboBoxItem>
+            <ComboBoxItem>SC</ComboBoxItem>
+            <ComboBoxItem>SE</ComboBoxItem>
+            <ComboBoxItem>TO</ComboBoxItem>
+        </ComboBox>
         <TextBox x:Name="resultado" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="27,264,0,0" Grid.RowSpan="2" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Height="143" Width="366"/>
         <Button x:Name="botaoCalcular" Content="Calcular" Grid.ColumnSpan="2" Margin="27,429,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Click="Button_Click" Width="175"/>
         <Button x:Name="botaoResetar" Content="Resetar" Grid.ColumnSpan="2" Margin="218,429,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Click="Button_Click" Width="175"/>
