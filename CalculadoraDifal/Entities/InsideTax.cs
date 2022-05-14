@@ -2,8 +2,6 @@ namespace CalculadoraDifal.Entities
 {
     internal class InsideTax : InitialParams
     {
-        double difal, totalValue, calculationBasis, productIcms;
-
         public double IcmsTax { get; set; }
         public Product Product { get; set; }
         public Contributor Contributor { get; set; }
@@ -19,29 +17,32 @@ namespace CalculadoraDifal.Entities
             IcmsTax = IcmsTax();
         }
 
-        public void Calculate() 
-        {
-            productIcms = Product.ProductValue * IcmsTax;
-            calculationBasis = (Product.ProductValue - productIcms) / (1 - Product.InternalRate);
-            difal = calculationBasis - Product.ProductValue;
-            totalValue = Product.ProductValue + difal;
-        }
-
         public double ProductIcms()
         {
-            return Product.ProductValue * IcmsTax;
+            return Product.ProductValue * (IcmsTax / 100);
         }
+
         public double CalculationBasis()
         {
             return (Product.ProductValue - ProductIcms()) / (1 - Product.InternalRate);
         }
+
         public double Difal()
         {
             return CalculationBasis() - Product.ProductValue;
         }
+
         public double TotalValue()
         {
             return Product.ProductValue + Difal();
+        }
+
+        public override string ToString()
+        {
+            return $"ICMS do Produto: R$ {ProductIcms().ToString("F2")}\n" +
+                   $"Base de Cálculo: R$ {CalculationBasis().ToString("F2")}\n" +
+                   $"Difal: R$ {Difal().ToString("F2")}\n" +
+                   $"Valor Total: R$ {TotalValue().ToString("F2")}";
         }
     }
 }

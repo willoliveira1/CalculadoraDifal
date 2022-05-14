@@ -2,8 +2,6 @@
 {
     internal class NonContributorTax : InitialParams
     {
-        double difal, totalValue, calculationBasis, productIcms;
-
         public double IcmsTax { get; set; }
         public Product Product { get; set; }
         public Contributor Contributor { get; set; }
@@ -21,15 +19,23 @@
 
         public double DifalRate()
         {
-            return Product.InternalRate - IcmsTax;
+            return Product.InternalRate - (IcmsTax / 100);
         }
+
         public double Difal()
         {
             return Product.ProductValue * DifalRate();
         }
+
         public double TotalValue()
         {
             return Product.ProductValue;
+        }
+
+        public override string ToString()
+        {
+            return $"Difal: R$ {Difal().ToString("F2")}\n" +
+                   $"Valor Total: R$ {TotalValue().ToString("F2")}";
         }
     }
 }
