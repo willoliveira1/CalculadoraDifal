@@ -2,7 +2,7 @@
 {
     enum Origin
     {
-        Nacional = 0,
-        Internacional = 1
+        National = 0,
+        International = 1
     }
 }

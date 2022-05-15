@@ -27,21 +27,21 @@ namespace CalculadoraDifal.Entities
 
         public double IcmsTax()
         {
-            if (Product.Origin == Enum.Parse<Origin>("Internacional"))
+            if (Product.Origin == Enum.Parse<Origin>("International"))
             {
-                return 4;
+                return 0.04;
             }
             twelvePercentList.AddRange(twelvePercentStates.Split(" "));
             if (twelvePercentList.Contains(Contributor.State))
             {
-                return 12;
+                return 0.12;
             }
             else
             {
                 sevenPercenteList.AddRange(sevenPercentStates.Split(" "));
                 if (sevenPercenteList.Contains(Contributor.State))
                 {
-                    return 7;
+                    return 0.07;
                 }
             }
             return 0;

@@ -66,40 +66,41 @@ namespace CalculadoraDifal
             directTaxStateList.AddRange(directTaxStates.Split(" "));
 
             product.ProductValue = double.Parse(valorDoProduto.Text);
-            product.InternalRate = int.Parse(aliquotaInterna.Text);
+            product.InternalRate = double.Parse(aliquotaInterna.Text) / 100;
             
-            if ((bool)situacaoFiscalRadio1.IsChecked)
+            if ((bool)contrib.IsChecked)
             {
-                contributor.ContributorType = Enum.Parse<ContributorType>((string)situacaoFiscalRadio1.Content);
+                contributor.ContributorType = Enum.Parse<ContributorType>((string)contrib.Name);
             }
             else
             {
-                contributor.ContributorType = Enum.Parse<ContributorType>((string)situacaoFiscalRadio2.Content);
+                contributor.ContributorType = Enum.Parse<ContributorType>((string)nonContributor.Name);
             }
             
-            if ((bool)origemRadio1.IsChecked)
+            if ((bool)National.IsChecked)
             {
-                product.Origin = Enum.Parse<Origin>((string)origemRadio1.Content);
+                product.Origin = Enum.Parse<Origin>((string)National.Name);
             }
             else
             {
-                product.Origin = Enum.Parse<Origin>((string)origemRadio2.Content);
+                product.Origin = Enum.Parse<Origin>((string)International.Name);
             }
             contributor.State = (String)estado.SelectionBoxItem;
 
 
             // Result
-            if (contributor.ContributorType == Enum.Parse<ContributorType>("NãoContribuinte"))
+            if (contributor.ContributorType == Enum.Parse<ContributorType>("nonContributor"))
             {
                 NonContributorTax nonContributorTax = new NonContributorTax(product, contributor);
                 resultado.Text = nonContributorTax.ToString();
+                Console.WriteLine();
             }
             else if (insideTaxStateList.Contains(contributor.State))
             {
                 InsideTax insideTax = new InsideTax(product, contributor);
                 resultado.Text = insideTax.ToString();
             }
-            else if (directTaxStateList.Contains(contributor.State))
+            else
             {
                 DirectTax directTax = new DirectTax(product, contributor);
                 resultado.Text = directTax.ToString();

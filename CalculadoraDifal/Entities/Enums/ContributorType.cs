@@ -2,7 +2,7 @@
 {
     enum ContributorType
     {
-        Contribuinte = 0,
-        NãoContribuinte = 1
+        contrib = 0,
+        nonContributor = 1
     }
 }
