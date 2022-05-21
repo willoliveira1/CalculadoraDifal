@@ -26,15 +26,6 @@
         {
             return Product.ProductValue * DifalRate();
         }
-        /*public double DifalRate()
-        {
-            return Product.InternalRate - IcmsTax;
-        }
-
-        public double Difal()
-        {
-            return Product.ProductValue * (DifalRate() / 100);
-        }*/
 
         public double TotalValue()
         {

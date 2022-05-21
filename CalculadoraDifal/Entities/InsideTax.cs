@@ -26,15 +26,6 @@ namespace CalculadoraDifal.Entities
         {
             return (Product.ProductValue - ProductIcms()) / (1 - Product.InternalRate);
         }
-        /*public double ProductIcms()
-        {
-            return Product.ProductValue * (IcmsTax / 100);
-        }
-
-        public double CalculationBasis()
-        {
-            return (Product.ProductValue - ProductIcms()) / (1 - (Product.InternalRate / 100));
-        }*/
 
         public double Difal()
         {

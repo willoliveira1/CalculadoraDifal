@@ -5,7 +5,7 @@ namespace CalculadoraDifal.Entities
     class Product
     {
         public double ProductValue { get; set; }
-        public double InternalRate { get; set; }// Alíquota Interna Produto
+        public double InternalRate { get; set; }
         public Origin Origin { get; set; }
 
         public Product()
