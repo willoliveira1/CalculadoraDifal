@@ -15,9 +15,9 @@ namespace CalculadoraDifal
         List<string> directTaxStateList = new List<string>();
         List<string> insideTaxStateList = new List<string>();
 
-        string insideTaxStates = "AL BA GO MG PA PR PE RS RO SC SE TO";
-        string directTaxStates = "AC AP AM CE DF ES MA MT MS PB PI RJ RN RR";
-        
+        string insideTaxStates = "AC AL BA GO MG PA PE PR RO RS SC SE TO";
+        string directTaxStates = "AM AP CE DF ES MA MS MT PB PI RJ RN RR";
+
 
         public MainPage()
         {

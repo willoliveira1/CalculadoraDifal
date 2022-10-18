@@ -2,9 +2,7 @@
 {
     internal class DirectTax : InitialParams
     {
-        public double IcmsTax { get; set; }
-        public Product Product { get; set; }
-        public Contributor Contributor { get; set; }
+        public double Icms { get; set; }
 
         public DirectTax()
         {
@@ -14,12 +12,12 @@
         {
             Product = product;
             Contributor = contributor;
-            IcmsTax = IcmsTax();
+            Icms = IcmsTax();
         }
 
         public double DifalRate()
         {
-            return Product.InternalRate - IcmsTax;
+            return Product.InternalRate - Icms;
         }
         
         public double Difal()

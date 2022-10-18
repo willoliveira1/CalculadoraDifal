@@ -2,9 +2,7 @@ namespace CalculadoraDifal.Entities
 {
     internal class InsideTax : InitialParams
     {
-        public double IcmsTax { get; set; }
-        public Product Product { get; set; }
-        public Contributor Contributor { get; set; }
+        public double Icms { get; set; }
 
         public InsideTax()
         {
@@ -14,12 +12,12 @@ namespace CalculadoraDifal.Entities
         {
             Product = product;
             Contributor = contributor;
-            IcmsTax = IcmsTax();
+            Icms = IcmsTax();
         }
 
         public double ProductIcms()
         {
-            return Product.ProductValue * IcmsTax;
+            return Product.ProductValue * Icms;
         }
 
         public double CalculationBasis()
